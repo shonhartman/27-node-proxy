@@ -39,3 +39,25 @@ let server = http.createServer(function(req, res) {
 });
 
 server.listen(8000);
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//app.js
+
+let proxy = httpProxy.createProxyServer({});
+
+let server = httpProxy.createServer((req, res) => {
+  // api_key = ...
+    let parsedUrl = url.parse(req.url, true);
+    parsedUrl.query.api_key = 'd494...';
+    // console.log(parsedUrl);
+    parsedUrl.search = null;
+    req.url = url.format(parsedUrl);
+
+  proxy.web(req, res, {
+    target: "http://www.api/nasa/../.."
+
+  });
+
+});
+
+server.listen(8000);
