@@ -54,3 +54,58 @@ let server = http.createServer(function(req, res) {
 });
 
 server.listen(8000);
+
+
+///////////////////////////////////////////////////////////////////////////////
+//COOKING LIGHT REMAKE
+
+##Post Model
+1. title
+
+##Post Item Model
+1. image_url
+2. captions
+3. show_order
+4. post_id
+5. recipe_url
+6. recipe_title
+7. description
+
+##Recipe Model
+1. name - string
+2. image_url - string
+3. recipe_likes - number
+4. description - string
+5. yeild - string
+6. total_time - number
+7. photo_caption - string
+8. preparation - string
+9. author - string
+10. publication date - datetime
+11. publication - string
+
+##Ingredient Model
+1. quantity
+2. item
+3. recipe_id
+4. ingredient_id
+5. name - string
+
+##Nutrition Data Model
+1. calories - floats (decimal numbers)
+2. fat - floats (decimal numbers)
+
+##Reviews Model
+1. user_id - string
+2. content - string
+3. created_at - datetime
+4. rating
+
+##Helpful Reviews
+1. helpful - boolean
+2. user_id - string
+3. review_id
+
+##Saved Recipe Model
+1. recipe_id
+2. user_id
